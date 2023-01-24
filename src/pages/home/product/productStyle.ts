@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
+interface IContainer {
+  isSkeleton?: boolean
+}
+
+const Container = styled.div<IContainer>`
   width: 428px;
   height: 200px;
   display: flex;
@@ -11,7 +15,7 @@ const Container = styled.div`
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
 
   :hover {
-    outline: 3px solid green;
+    outline: ${props => !props.isSkeleton && '3px solid green'};
   }
 `
 
@@ -22,7 +26,7 @@ const Image = styled.img`
 `
 
 interface IInfo {
-  isAvailable: boolean
+  isAvailable?: boolean
 }
 
 const Info = styled.div<IInfo>`
