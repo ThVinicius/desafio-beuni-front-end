@@ -13,8 +13,8 @@ const Content: FC = () => {
       <Filter getProducts={getProducts} />
       {!loadingGetProducts ? (
         <Products>
-          {products?.map(({ name, image, stock, price }, index) => (
-            <Product {...{ name, image, stock, price }} key={index} />
+          {products?.map((product, index) => (
+            <Product product={product} key={index} />
           ))}
         </Products>
       ) : (

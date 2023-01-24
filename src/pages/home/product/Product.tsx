@@ -1,29 +1,33 @@
-import { FC, useMemo } from 'react'
+import { FC, useMemo, useState } from 'react'
+import { IProduct } from '../../../types/productType'
 import formatPrice from '../../../utils/formatPrice'
+import Modal from '../modal/Modal'
 import { Container, Image, Info } from './productStyle'
 
 interface IProps {
-  name: string
-  image: string
-  stock: number
-  price: number
+  product: IProduct
 }
 
-const Product: FC<IProps> = ({ name, image, stock, price }) => {
+const Product: FC<IProps> = ({ product }) => {
+  const [openModal, setOpenModal] = useState(false)
+
   const isAvailable = useMemo(
-    () => (stock <= 0 ? 'Indisponível' : 'Disponível'),
-    [stock]
+    () => (product.stock <= 0 ? 'Indisponível' : 'Disponível'),
+    [product.stock]
   )
 
   return (
-    <Container>
-      <Info isAvailable={isAvailable === 'Disponível'}>
-        <h1>{name}</h1>
-        <h2>{isAvailable}</h2>
-        <h3>R$ {formatPrice(price)}</h3>
-      </Info>
-      <Image src={image} alt={name} />
-    </Container>
+    <>
+      <Container onClick={() => setOpenModal(true)}>
+        <Info isAvailable={isAvailable === 'Disponível'}>
+          <h1>{product.name}</h1>
+          <h2>{isAvailable}</h2>
+          <h3>R$ {formatPrice(product.price)}</h3>
+        </Info>
+        <Image src={product.image} alt={product.name} />
+      </Container>
+      <Modal {...{ product, openModal, setOpenModal }} />
+    </>
   )
 }
 
