@@ -38,6 +38,7 @@ const Info = styled.div<IInfo>`
   align-items: center;
   justify-content: space-between;
   font: normal 700 20px 'Lato', sans-serif;
+  text-align: center;
 
   h2 {
     color: ${props => (props.isAvailable ? 'green' : 'red')};

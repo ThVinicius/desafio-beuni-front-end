@@ -1,27 +1,25 @@
 import { FC } from 'react'
 import useGetProducts from '../../../hooks/api/useGetProducts'
+import Filter from '../filter/Filter'
 import Product from '../product/Product'
-import { Container } from './contentStyle'
+import ContentSkeleton from './ContentSkeleton'
+import { Container, Products } from './contentStyle'
 
 const Content: FC = () => {
-  const { products, loadingGetProducts } = useGetProducts()
+  const { products, loadingGetProducts, getProducts } = useGetProducts()
+
   return (
     <Container>
-      <>
-        {!loadingGetProducts &&
-          products!.map(({ name, image, stock, price }, index) => (
+      <Filter getProducts={getProducts} />
+      {!loadingGetProducts ? (
+        <Products>
+          {products?.map(({ name, image, stock, price }, index) => (
             <Product {...{ name, image, stock, price }} key={index} />
           ))}
-
-        {/* {!loadingGetProducts && (
-          <Product
-            name={products![0].name}
-            image={products![0].image}
-            stock={products![0].stock}
-            price={products![0].price}
-          />
-        )} */}
-      </>
+        </Products>
+      ) : (
+        <ContentSkeleton />
+      )}
     </Container>
   )
 }
