@@ -7,6 +7,7 @@ import GlobalCSS from './assets/css/global'
 import Header from './components/header/Header'
 import Home from './pages/home/Index'
 import SignIn from './pages/signIn/Index'
+import SignUp from './pages/signUp/Index'
 
 const App: FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: FC = () => {
       <ToastContainer />
       <Routes>
         <Route path="/" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
       </Routes>
     </BrowserRouter>
