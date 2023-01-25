@@ -1,17 +1,19 @@
 import { FC } from 'react'
-import { Container, Logo } from './headerStyle'
+import usePath from '../../hooks/usePath'
+import Logo from '../Logo/Logo'
+import { Container } from './headerStyle'
 
 const Header: FC = () => {
+  const { isAuth } = usePath()
+
   return (
-    <Container>
-      <Logo>
-        <h1>Desafio</h1>
-        <img
-          src="http://beuni.com.br/wp-content/uploads/sites/17/2022/07/beuni-menor.png?x24827"
-          alt="Logo BeUni"
-        />
-      </Logo>
-    </Container>
+    <>
+      {!isAuth && (
+        <Container>
+          <Logo />
+        </Container>
+      )}
+    </>
   )
 }
 
