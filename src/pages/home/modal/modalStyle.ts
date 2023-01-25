@@ -10,6 +10,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 `
 
 const Content = styled.div`
@@ -20,11 +21,20 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
   position: relative;
+
+  @media (max-width: 1150px) {
+    width: 95%;
+    flex-direction: column;
+  }
 `
 
 const Image = styled.img`
   width: 500px;
   height: 100%;
+
+  @media (max-width: 1150px) {
+    width: 100%;
+  }
 `
 
 const Info = styled.div`
@@ -36,6 +46,7 @@ const Info = styled.div`
   justify-content: space-between;
   gap: 15px;
   overflow-y: auto;
+  text-align: center;
 
   h1 {
     font: normal 700 25px 'Lato', sans-serif;

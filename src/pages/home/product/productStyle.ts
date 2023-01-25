@@ -17,12 +17,20 @@ const Container = styled.div<IContainer>`
   :hover {
     outline: ${props => !props.isSkeleton && '3px solid green'};
   }
+
+  @media (max-width: 400px) {
+    width: 340px;
+  }
 `
 
 const Image = styled.img`
   width: 200px;
   height: 200px;
   border-radius: 0 10px 10px 0;
+
+  @media (max-width: 400px) {
+    width: 150px;
+  }
 `
 
 interface IInfo {
