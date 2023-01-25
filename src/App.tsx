@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
+import { TokenProvider } from './context/useToken'
 import ResetCSS from './assets/css/reset'
 import GlobalCSS from './assets/css/global'
 import Header from './components/header/Header'
@@ -16,11 +17,13 @@ const App: FC = () => {
       <GlobalCSS />
       <Header />
       <ToastContainer />
-      <Routes>
-        <Route path="/" element={<SignIn />} />
-        <Route path="signup" element={<SignUp />} />
-        <Route path="/home" element={<Home />} />
-      </Routes>
+      <TokenProvider>
+        <Routes>
+          <Route path="/" element={<SignIn />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </TokenProvider>
     </BrowserRouter>
   )
 }

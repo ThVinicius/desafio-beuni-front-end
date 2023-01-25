@@ -8,7 +8,7 @@ import {
 } from 'react'
 
 interface IProps {
-  children: JSX.Element[]
+  children: JSX.Element | JSX.Element[]
 }
 
 type ContextType = {
