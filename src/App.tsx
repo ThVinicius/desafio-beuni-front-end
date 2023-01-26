@@ -10,6 +10,7 @@ import Header from './components/header/Header'
 import Home from './pages/home/Index'
 import SignIn from './pages/signIn/Index'
 import SignUp from './pages/signUp/Index'
+import Cart from './pages/cart/Index'
 
 const App: FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: FC = () => {
             <Route path="/" element={<SignIn />} />
             <Route path="signup" element={<SignUp />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </CartProvider>
       </TokenProvider>

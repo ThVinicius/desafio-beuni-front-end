@@ -5,6 +5,7 @@ import Logo from '../Logo/Logo'
 import CustomerMenu from './CustomerMenu'
 import Cart from './Cart'
 import { Container, Icon } from './headerStyle'
+import { Link } from 'react-router-dom'
 
 const Header: FC = () => {
   const { isAuth } = usePath()
@@ -19,7 +20,9 @@ const Header: FC = () => {
             alt="Icone do usuário"
             onClick={() => setOpenCustomerMenu(prev => !prev)}
           />
-          <Logo />
+          <Link to="/home">
+            <Logo />
+          </Link>
           <Cart />
           <CustomerMenu {...{ openCustomerMenu, setOpenCustomerMenu }} />
         </Container>

@@ -3,12 +3,6 @@ export interface ICart {
   productId: number
   name: string
   image: string
-  description: string
-  category: string
-  stock: number
-  brand: string
-  price: number
-  hasFreeShipping: boolean
-  minimumQuantity: number
-  rating: number
+  quantity: number
+  totalPrice: number
 }
