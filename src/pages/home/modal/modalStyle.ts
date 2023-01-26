@@ -53,7 +53,7 @@ const Info = styled.div`
   }
 
   h3 {
-    font: normal 500 21px 'Lato', sans-serif;
+    font: normal 500 17px 'Lato', sans-serif;
   }
 
   div {
@@ -91,4 +91,38 @@ const Title = styled.div`
   gap: 3px;
 `
 
-export { Container, Content, Image, Info, BtnClose, Title }
+const Box = styled.span`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font: normal 500 18px 'Roboto', sans-serif;
+
+  span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 50%;
+    }
+  }
+`
+
+const BtnAddCart = styled.button`
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: green;
+  color: #fff;
+  font: normal 400 18px 'Roboto', sans-serif;
+  cursor: pointer;
+`
+
+export { Container, Content, Image, Info, BtnClose, Title, BtnAddCart, Box }

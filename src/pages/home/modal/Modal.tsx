@@ -2,15 +2,22 @@ import { Dispatch, FC, SetStateAction } from 'react'
 import { Rating } from 'react-simple-star-rating'
 import { IProduct } from '../../../types/productType'
 import formatPrice from '../../../utils/formatPrice'
+import Form from './Form'
 import { BtnClose, Container, Content, Image, Info, Title } from './modalStyle'
 
 interface IProps {
   product: IProduct
   openModal: boolean
   setOpenModal: Dispatch<SetStateAction<boolean>>
+  isAvailable: 'Indisponível' | 'Disponível'
 }
 
-const Modal: FC<IProps> = ({ product, openModal, setOpenModal }) => {
+const Modal: FC<IProps> = ({
+  product,
+  openModal,
+  setOpenModal,
+  isAvailable
+}) => {
   return (
     <>
       {openModal && (
@@ -35,9 +42,10 @@ const Modal: FC<IProps> = ({ product, openModal, setOpenModal }) => {
                 <p>{product.hasFreeShipping ? 'Sim' : 'Não'}</p>
               </div>
               <div>
-                <h2>Preço</h2>
+                <h2>Preço por unidade</h2>
                 <p>R$ {formatPrice(product.price)}</p>
               </div>
+              <Form {...{ product, isAvailable }} />
             </Info>
             <Image src={product.image} alt={product.name} />
             <BtnClose
