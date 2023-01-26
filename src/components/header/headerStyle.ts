@@ -53,4 +53,23 @@ const Menu = styled.div<ICustomerMenu>`
   }
 `
 
-export { Container, Icon, Menu }
+const CartContainer = styled.div`
+  position: relative;
+`
+
+const CartCount = styled.div`
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: red;
+  color: #fff;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: normal 700 18px 'Roboto', sans-serif;
+`
+
+export { Container, Icon, Menu, CartCount, CartContainer }
