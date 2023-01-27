@@ -19,15 +19,10 @@ const Container = styled.div`
     font: normal 700 20px 'Roboto', sans-serif;
     cursor: pointer;
   }
+
+  h1 {
+    font: normal 700 20px 'Roboto', sans-serif;
+  }
 `
 
-const LinkBox = styled.div`
-  width: fit-content;
-  height: fit-content;
-  padding: 10px 20px;
-  background-color: #fff;
-  border-radius: 15px;
-  font: normal 700 22px 'Lato', sans-serif;
-`
-
-export { Container, LinkBox }
+export { Container }

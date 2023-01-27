@@ -3,6 +3,7 @@ import useLogout from '../../hooks/useLogout'
 import logoutIcon from '../../assets/images/logout.png'
 import availableIcon from '../../assets/images/available.svg'
 import { Menu } from './headerStyle'
+import { Link } from 'react-router-dom'
 
 interface IProps {
   openCustomerMenu: boolean
@@ -25,10 +26,12 @@ const CustomerMenu: FC<IProps> = ({
       isOpen={openCustomerMenu}
       onMouseLeave={() => setOpenCustomerMenu(false)}
     >
-      <span>
-        Histórico de compras
-        <img src={availableIcon} alt="icone de historico" />
-      </span>
+      <Link to="/order">
+        <span>
+          Histórico de compras
+          <img src={availableIcon} alt="icone de historico" />
+        </span>
+      </Link>
       <span onClick={handleLogout}>
         Logout
         <img src={logoutIcon} alt="logout icon" />

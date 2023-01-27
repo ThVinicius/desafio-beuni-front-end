@@ -1,9 +1,10 @@
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 import { useCart } from '../../../context/useCart'
 import useGetCart from '../../../hooks/api/useGetCart'
-import CartTemplate from '../cartTemplate/CartTemplate'
-import Info from '../info/Info'
-import { Box, Container } from './contentStyle'
+import CartTemplate from '../../../components/cartTemplate/CartTemplate'
+import Info from '../../../components/info/Info'
+import { Box, Container, LinkBox } from './contentStyle'
 
 const Content: FC = () => {
   const { cart } = useCart()
@@ -16,7 +17,15 @@ const Content: FC = () => {
           <CartTemplate cart={cart} key={index} />
         ))}
       </Box>
-      <Info />
+      {cart.length > 0 ? (
+        <Info />
+      ) : (
+        <LinkBox>
+          <Link to="/home">
+            Seu carrinho está vazio. Clique aqui para voltar as compras
+          </Link>
+        </LinkBox>
+      )}
     </Container>
   )
 }
