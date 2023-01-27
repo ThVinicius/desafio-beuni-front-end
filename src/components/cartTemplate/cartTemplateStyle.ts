@@ -29,6 +29,40 @@ const Container = styled.div`
     color: red;
     cursor: pointer;
   }
+
+  @media (max-width: 860px) {
+    width: 100%;
+  }
+
+  @media (max-width: 670px) {
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+    }
+
+    h1,
+    span,
+    h2 {
+      width: 25%;
+    }
+
+    h1,
+    h2,
+    p,
+    h6 {
+      font: normal 400 12px 'Lato', sans-serif;
+    }
+
+    span {
+      gap: 5px;
+      font: normal 400 12px 'Lato', sans-serif;
+    }
+
+    h3 {
+      font: normal 700 18px 'Lato', sans-serif;
+    }
+  }
 `
 
 export { Container }

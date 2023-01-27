@@ -17,6 +17,11 @@ const Container = styled.form`
     font: normal 700 18px 'Lato', sans-serif;
     color: #000;
     text-decoration: underline;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    width: 95%;
   }
 `
 

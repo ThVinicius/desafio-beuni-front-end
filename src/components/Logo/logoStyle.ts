@@ -13,6 +13,16 @@ const Container = styled.div`
   img {
     height: 38px;
   }
+
+  @media (max-width: 525px) {
+    h1 {
+      font: normal 700 28px 'Lato', sans-serif;
+    }
+
+    img {
+      height: 28px;
+    }
+  }
 `
 
 export { Container }

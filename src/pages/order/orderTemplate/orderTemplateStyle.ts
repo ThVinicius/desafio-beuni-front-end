@@ -24,6 +24,27 @@ const Container = styled.div`
     color: red;
     cursor: pointer;
   }
+
+  @media (max-width: 840px) {
+    width: 75%;
+  }
+
+  @media (max-width: 640px) {
+    width: 95%;
+  }
+
+  @media (max-width: 440px) {
+    width: 100%;
+    padding: 10px 20px;
+
+    span {
+      font: normal 400 15px 'Lato', sans-serif;
+    }
+
+    h3 {
+      font: normal 700 22px 'Lato', sans-serif;
+    }
+  }
 `
 
 export { Container }

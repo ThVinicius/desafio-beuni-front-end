@@ -9,6 +9,10 @@ const Container = styled.header`
   justify-content: space-between;
   background-color: #f89c71;
   position: relative;
+
+  @media (max-width: 600px) {
+    padding: 0 10px;
+  }
 `
 
 const Icon = styled.img`

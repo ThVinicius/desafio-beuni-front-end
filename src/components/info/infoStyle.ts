@@ -23,6 +23,19 @@ const Container = styled.div`
   h1 {
     font: normal 700 20px 'Roboto', sans-serif;
   }
+
+  @media (max-width: 605px) {
+    gap: 5px;
+
+    button {
+      padding: 10px 20px;
+      font: normal 700 14px 'Roboto', sans-serif;
+    }
+
+    h1 {
+      font: normal 700 14px 'Roboto', sans-serif;
+    }
+  }
 `
 
 export { Container }

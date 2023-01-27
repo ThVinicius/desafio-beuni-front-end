@@ -123,6 +123,11 @@ const BtnAddCart = styled.button`
   color: #fff;
   font: normal 400 18px 'Roboto', sans-serif;
   cursor: pointer;
+
+  @media (max-width: 600px) {
+    padding: 10px;
+    font: normal 400 16px 'Roboto', sans-serif;
+  }
 `
 
 export { Container, Content, Image, Info, BtnClose, Title, BtnAddCart, Box }
