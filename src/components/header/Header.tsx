@@ -1,17 +1,33 @@
-import { FC } from 'react'
-import { Container, Logo } from './headerStyle'
+import { FC, useState } from 'react'
+import usePath from '../../hooks/usePath'
+import userIcon from '../../assets/images/user.svg'
+import Logo from '../Logo/Logo'
+import CustomerMenu from './CustomerMenu'
+import Cart from './Cart'
+import { Container, Icon } from './headerStyle'
+import { Link } from 'react-router-dom'
 
 const Header: FC = () => {
+  const { isAuth } = usePath()
+  const [openCustomerMenu, setOpenCustomerMenu] = useState(false)
+
   return (
-    <Container>
-      <Logo>
-        <h1>Desafio</h1>
-        <img
-          src="http://beuni.com.br/wp-content/uploads/sites/17/2022/07/beuni-menor.png?x24827"
-          alt="Logo BeUni"
-        />
-      </Logo>
-    </Container>
+    <>
+      {!isAuth && (
+        <Container>
+          <Icon
+            src={userIcon}
+            alt="Icone do usuário"
+            onClick={() => setOpenCustomerMenu(prev => !prev)}
+          />
+          <Link to="/home">
+            <Logo />
+          </Link>
+          <Cart />
+          <CustomerMenu {...{ openCustomerMenu, setOpenCustomerMenu }} />
+        </Container>
+      )}
+    </>
   )
 }
 

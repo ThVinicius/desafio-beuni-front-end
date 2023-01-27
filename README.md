@@ -26,6 +26,9 @@ Desafio técnico do processo seletivo da beUni.
 - Listar todos os produtos
 - Filtrar os produtos pelo nome
 - Exibir as informações de um produto
+- Adicionar produtos ao carrinho
+- Finalizar um pedido
+- Exibir todos os pedidos feitos pelo cliente
 
 <h1 align="center" >
 <img alt="gif" src="./src/assets/images/home.gif">

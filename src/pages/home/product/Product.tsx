@@ -26,7 +26,7 @@ const Product: FC<IProps> = ({ product }) => {
         </Info>
         <Image src={product.image} alt={product.name} />
       </Container>
-      <Modal {...{ product, openModal, setOpenModal }} />
+      <Modal {...{ product, openModal, setOpenModal, isAvailable }} />
     </>
   )
 }
